@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <img src ="Capture.PNG">
+        <h3> Welcome to our Quiz Competition</h3>
+    </header>
+    <div class="Form-box">
+        <form class="Login-form" onsubmit="auth(); return false;">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="email" required>
+                <label>Email</label>
+                <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+            <div class="checkbox">
+                <span>
+                    <input type="checkbox" id="login-checkbox">
+                    <label for="login-checkbox">Remember Me</label>
+                </span>
+               
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <h5 class="Register-btn">Don't have an account ? Register</h5>
+        </form>
+        <form class="Register-form">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" required>
+                <label>Username</label>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div class="input-box">
+                <input type="text" required>
+                <label>Email</label>
+                <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="register-checkbox">
+                <label for="register-checkbox">I agree to the terms & conditions</label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+
+            <h5 class="Login-btn">Already registered ? Login</h5>
+        </form>
+    </div>
+    <script>
+        function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(email === "abc" && password === "123") {
+                alert("login successful");
+                window.location.href = "page2.html";
+            } else {
+                alert("Invalid credentials");
+            }
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
