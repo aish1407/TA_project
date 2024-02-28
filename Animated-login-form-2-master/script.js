@@ -1,14 +1,15 @@
-let register_btn = document.querySelector(".Register-btn");
-let login_btn = document.querySelector(".Login-btn");
-let form = document.querySelector(".Form-box");
-register_btn.addEventListener("click", () => {
-  form.classList.add("change-form");
-});
-login_btn.addEventListener("click", () => {
-  form.classList.remove("change-form");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.querySelector(".start.btn");
 
-
+  if (startBtn) {
+    startBtn.addEventListener("click", () => {
+      console.log("Start button clicked");
+      startQuiz();
+    });
+  } else {
+    console.error("Start button not found");
+  }
+});
 
 const progressBar = document.querySelector(".progress-bar"),
   progressText = document.querySelector(".progress-text");
@@ -51,8 +52,6 @@ const startQuiz = () => {
       }, 1000);
     });
 };
-
-startBtn.addEventListener("click", startQuiz);
 
 const showQuestion = (question) => {
   const questionText = document.querySelector(".question"),
@@ -124,25 +123,32 @@ const loadingAnimation = () => {
     }
   }, 500);
 };
+
 function defineProperty() {
   var osccred = document.createElement("div");
   osccred.innerHTML =
     "A Project By <a href='https://www.youtube.com/@opensourcecoding' target=_blank>Open Source Coding</a>";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
+  osccred.style.position = "fixed"; // Change to fixed for better responsiveness
+  osccred.style.fontSize = "1vw"; // Responsive font size
   osccred.style.color = "#ccc";
   osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
+  osccred.style.padding = "1%"; // Responsive padding
   osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
+  osccred.style.borderTopLeftRadius = "1%"; // Responsive border radius
+  osccred.style.borderBottomRightRadius = "1%"; // Responsive border radius
+  osccred.style.boxShadow = "0 0 0.5vw #ccc"; // Responsive box shadow
+  osccred.style.bottom = "1%"; // Responsive distance from bottom
+  osccred.style.right = "1%"; // Responsive distance from right
+
   document.body.appendChild(osccred);
 }
 
+// Call the function
 defineProperty();
+
+
+
+
 
 const submitBtn = document.querySelector(".submit"),
   nextBtn = document.querySelector(".next");
